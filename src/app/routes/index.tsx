@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Dashboard, Login, Agendamento, Cadastro, Faturamento, Pep, Relatorios, Configuracao } from "../pages";
 import { TelaUsuarioLogado, TelaUsuarioNaoLogado } from "../shared/hooks/useRotas";
 
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <TelaUsuarioNaoLogado element={<Login></Login>}></TelaUsuarioNaoLogado>
+  },
+  {
+    path: "*",
+    element: <Navigate to="/login" />//Caso digite url errada, direciona para a rota padrão
   }
 ]);
 

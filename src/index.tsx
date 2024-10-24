@@ -5,14 +5,18 @@ import reportWebVitals from "./reportWebVitals";
 import Router from "./app/routes";
 import { RouterProvider } from "react-router-dom";
 import { AppProvider } from "./app/shared/contexts/AppContext";
-
+import { ThemeProvider } from "@mui/material/styles";
+import { LightTheme } from "./app/shared/themes/Light";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <AppProvider>
     <React.StrictMode>
-      <RouterProvider router={Router} />
+      <ThemeProvider theme={LightTheme}> {/* Adicione seu tema aqui */}
+        <RouterProvider router={Router} />
+      </ThemeProvider>
     </React.StrictMode>
   </AppProvider>
 );

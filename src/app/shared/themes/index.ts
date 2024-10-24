@@ -1,1 +1,1 @@
-export {};
+export { LightTheme } from "./Light";
